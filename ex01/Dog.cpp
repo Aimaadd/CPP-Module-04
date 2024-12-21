@@ -3,12 +3,21 @@
 Dog::Dog() : Animal("Dog") {
     std::cout << "Dog has been constructed" << std::endl;
     this->type = "Dog";
-    new Brain();
 }
 
 Dog::~Dog() {
     std::cout << "Dog has beed destructed" << std::endl;
-    delete this->brain;
+}
+
+Dog::Dog(const Dog &dog) {
+    if (this != &dog)
+        *this = dog;
+}
+
+Dog &Dog::operator=(const Dog &dog) {
+    if (this != &dog)
+        this->type = dog.type;
+    return *this;
 }
 
 void Dog::makeSound() const{

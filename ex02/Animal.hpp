@@ -6,10 +6,12 @@
 class Animal {
     public :
         Animal(std::string type);
+        Animal(const Animal &animal);
         Animal();
-        virtual ~Animal();
-        virtual void makeSound() const = 0;
+        ~Animal();
+        void makeSound() const;
         std::string getType() const;
+        Animal &operator=(const Animal &animal);
     protected :
         std::string type;
 };

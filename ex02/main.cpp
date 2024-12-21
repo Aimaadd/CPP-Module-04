@@ -17,6 +17,6 @@ k->makeSound();
 delete i;
 delete j;
 delete k;
-// delete meta;
+// delete meta; 
 return 0;
 }
